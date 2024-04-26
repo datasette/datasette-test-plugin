@@ -1,0 +1,30 @@
+[project]
+name = "datasette-test-plugin"
+version = "0.1"
+description = "Part of datasette-test"
+readme = "README.md"
+authors = [{name = "Simon Willison"}]
+license = {text = "Apache-2.0"}
+classifiers=[
+    "Framework :: Datasette",
+    "License :: OSI Approved :: Apache Software License"
+]
+requires-python = ">=3.8"
+dependencies = [
+    "datasette"
+]
+
+[project.urls]
+Homepage = "https://github.com/datasette/datasette-test-plugin"
+Changelog = "https://github.com/datasette/datasette-test-plugin/releases"
+Issues = "https://github.com/datasette/datasette-test-plugin/issues"
+CI = "https://github.com/datasette/datasette-test-plugin/actions"
+
+[project.entry-points.datasette]
+test_plugin = "datasette_test_plugin"
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-asyncio"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "strict"
